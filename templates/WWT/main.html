@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+<!--  Главная страница -->
+{% block content %}
+{% block carusel %}
+{% include 'WWT/carusel.html' %}
+{% endblock %}
+<div class="wrapper_product">
+    {% block product %}
+    {% include 'WWT/product.html' %}
+    {% endblock %}
+
+    <div class="wrapper_form">
+        {% block order_form %}
+        {% include 'WWT/form.html' %}
+        {% endblock %}
+    </div>
+    <div class="form_hr2"></div>
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block about %}
+<!-- Страница "О нас" -->
+<div class="container">
+    <div class="about_all">
+        <div class="about_img">
+            <img src="{% static  'images/DSC_3979.jpg' %}" alt="">
+        </div>
+        <h1 class="about_title">О НАС</h1>
+        <div class="about_text">
+            <p>Мы изготавливаем качественную корпусную мебель на заказ.
+                <br>Наши преимущества:
+                <br>&nbsp&nbspБолее 5 лет стажа
+                <br>&nbsp&nbspЗамеры, доставка, сборка бесплатны
+                <br>&nbsp&nbspГарантия на мебель и фурнитуру.
+                <br>&nbsp&nbspИндивидуальный подход к каждому</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

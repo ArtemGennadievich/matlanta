@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+{% load static %}
+{% load blog_tags %}
+<html lang="ru">
+<head>
+    <title>{{ title }}</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{% static  'images/glav_icon1.png' %}"/>
+    <link rel="stylesheet" href="{% static 'css/style_catalog.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+</head>
+<body>
+<div class="wrapper">
+    <!--    Шапка-->
+    <header class="header">
+        <div class="hamburger-menu">
+            <input id="menu__toggle" type="checkbox"/>
+            <label class="menu__btn" for="menu__toggle">
+                <span></span>
+            </label>
+
+            <ul class="menu__box">
+                <li class="li_burger"><a href="{% url 'catalog' %}">КАТАЛОГ</a></li>
+                <li class="li_burger"><a href="{% url 'about_me' %}">О НАС</a></li>
+                <li class="li_burger"><a href="{% url 'delivery' %}">ДОСТАВКА</a></li>
+                <li class="li_burger"><a href="tel:+79179552659">НАШИ КОНТАКТЫ<br>&nbsp;&nbsp;8 888 8888888<br>&nbsp;&nbsp;8
+                    888 8888888</a></li>
+
+            </ul>
+        </div>
+        <a href="{% url 'home_page' %}" class="header__logo">
+            <svg viewbox="0 0 100 20">
+                <defs>
+                    <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
+                        <stop offset="5%" stop-color="#68fff0"/>
+                        <stop offset="95%" stop-color="#68fff0"/>
+                    </linearGradient>
+                    <pattern id="wave" x="0" y="0" width="120" height="20" patternUnits="userSpaceOnUse">
+                        <path id="wavePath"
+                              d="M-40 9 Q-30 7 -20 9 T0 9 T20 9 T40 9 T60 9 T80 9 T100 9 T120 9 V20 H-40z"
+                              mask="url(#mask)" fill="url(#gradient)">
+                            <animateTransform
+                                    attributeName="transform"
+                                    begin="0s"
+                                    dur="1.5s"
+                                    type="translate"
+                                    from="0,0"
+                                    to="40,0"
+                                    repeatCount="indefinite"/>
+                        </path>
+                    </pattern>
+                </defs>
+                <text text-anchor="middle" x="50" y="15" font-size="17" fill="url(#wave)" fill-opacity="1">
+                    ATLANTA
+                </text>
+                <text text-anchor="middle" x="50" y="15" font-size="17" fill="white"
+                      fill-opacity="0.6">ATLANTA
+                </text>
+            </svg>
+        </a>
+        <nav class="header__menu">
+            <ul class="header__list">
+                <li><a href="" class="header__link">КАТАЛОГ</a></li>
+                <li><a href="{% url 'about_me' %}" class="header__link">О НАС</a></li>
+                <li class="header__link3">{% include 'WWT/form3.html' %}</li>
+                <li id="hl"><a href="tel:+79179552659" class="header__link4">НАШИ КОНТАКТЫ <br> 8 888 8888888 <br> 8 888 8888888 <img
+                        src="{% static  'images/WhatsApp_icon.png' %}" alt=""> </a>
+
+                </li>
+
+            </ul>
+        </nav>
+    </header>
+    <!-- Контент -->
+    <main class="main">
+        <!-- Сайдбар -->
+        <aside class="sidebar">
+            <ul>
+                {% ShowCategory cat_selected=cat_selected %}
+            </ul>
+        </aside>
+        <section class="content">
+
+            <hr class="hr_side2">
+            <div class="products__items">
+                {% for product in ord_new %}
+
+                <div class="products__item">
+                    <a href="{{ product.get_absolute_url }}" class="product_item_a">
+                        <div class="products__image">
+                            <img src="{{ product.order_main_img.url }}" alt="">
+                        </div>
+                        <div class="products__name">{{ product.order_main_title }}</div>
+                        <hr class="hr_price">
+                        <div class="price_order">от {{ product.order_price }} ₽</div>
+                        <div class="products__button">ОФОРМИТЬ ЗАКАЗ</div>
+                    </a>
+                </div>
+
+                {% endfor %}
+            </div>
+
+        </section>
+    </main>
+    <!--   Подвал -->
+    <footer class="footer">
+        <div class="container">
+            <div class="wrap_footer">
+                <div class="we_whatsapp">
+                    <a class="we_inst" href="https://instagram.com/atlanta_mebel_kz?igshid=YmMyMTA2M2Y=">
+                        <div class="we_whatsapp_wrap">
+                            <div class="we_whatsapp_title">
+                                МЫ В INSTAGRAM
+                            </div>
+                            <img class="we_whatsapp_logo" src="{% static  'images/Instagram-Icon.png' %}" alt="">
+                    </a>
+                </div>
+
+            </div>
+            <div class="logo_footer">
+                <a href="">
+                    <svg viewbox="0 0 100 20">
+                        <defs>
+                            <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
+                                <stop offset="5%" stop-color="#68fff0"/>
+                                <stop offset="95%" stop-color="#68fff0"/>
+                            </linearGradient>
+                            <pattern id="wave" x="0" y="0" width="120" height="20" patternUnits="userSpaceOnUse">
+                                <path id="wavePath"
+                                      d="M-40 9 Q-30 7 -20 9 T0 9 T20 9 T40 9 T60 9 T80 9 T100 9 T120 9 V20 H-40z"
+                                      mask="url(#mask)" fill="url(#gradient)">
+                                    <animateTransform
+                                            attributeName="transform"
+                                            begin="0s"
+                                            dur="1.5s"
+                                            type="translate"
+                                            from="0,0"
+                                            to="40,0"
+                                            repeatCount="indefinite"/>
+                                </path>
+                            </pattern>
+                        </defs>
+
+                        <text text-anchor="middle" x="50" y="15" font-size="17" fill="url(#wave)" fill-opacity="1">
+                            ATLANTA
+                        </text>
+                        <text text-anchor="middle" x="50" y="15" font-size="17" fill="white"
+                              fill-opacity="0.6">ATLANTA
+                        </text>
+                        <!--                        #e8dcc2-->
+                    </svg>
+                </a>
+            </div>
+            <div class="we_instagramm">
+                <a class="we_inst" href="https://vk.com/id605181780">
+                    <div class="we_instagramm_wrap">
+                        <div class="we_instagramm_title">
+
+                            МЫ В VK
+
+                        </div>
+                        <img class="we_instagramm_logo" src="{% static  'images/vk.png' %}" alt="">
+
+                    </div>
+                </a>
+            </div>
+
+        </div>
+</footer>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>

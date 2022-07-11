@@ -1,0 +1,15 @@
+<!--  Форма с указанием заказа не с карточки товара. Вывод на base.html -->
+<div class="modal-title">ОФОРМИТЬ ЗАКАЗ</div>
+<div class="form_hr"></div>
+<div class="modal-body">
+    <form class="modal-form" action="{% url 'thank_after_form'%}" method="POST">
+        {% csrf_token %}
+        {{ car_list.form_product.name }}
+        {{ car_list.form_product.phone }}
+        {{ car_list.form_product.comment }}
+        <input name="email" type="text" value="Заказ не с карточки товара">
+        <div class="modal-button">
+            <button class="send">Отправить</button>
+        </div>
+    </form>
+</div>

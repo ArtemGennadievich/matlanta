@@ -1,0 +1,105 @@
+<!-- Слайдер -->
+<div class="container">
+    <div class="content">
+        <div class="carusel">
+            <div class="wrapper">
+                <input class="input3" checked type=radio name="slider" id="slide1"/>
+                <input class="input3" type=radio name="slider" id="slide2"/>
+                <input class="input3" type=radio name="slider" id="slide3"/>
+
+
+                <div class="slider-wrapper">
+                    <div class=inner>
+                        <article>
+                            <div class="info top-left">
+                                <h3 class="img_1">
+
+                                    <div class="animated-title">
+                                        <div class="text-top">
+                                            <div>
+                                                <span id="dos">Мастерская</span>
+                                                <span class="gray">По производству мебели</span>
+                                            </div>
+                                        </div>
+                                        <div class="text-bottom">
+                                            <div id="dos2">На заказ</div>
+                                        </div>
+                                    </div>
+                                </h3>
+                            </div>
+                            <img src="{{ car_list.car_img1 }}"/>
+                        </article>
+
+                        <article>
+                            <div class="info top-left">
+                                <h3 class="posit">
+                                    <div class="card">
+                                        <h1 class="entry-title">
+                                            Производим мебель по современным технологиям
+                                        </h1>
+                                        <small></small>
+
+                                        <span>Используем только качественные материалы</span>
+
+                                    </div>
+                                </h3>
+                            </div>
+                            <img src="{{ car_list.car_img2 }}"/>
+                        </article>
+
+                        <article>
+                            <div class="info top-left">
+                                <h3>
+                                    <div class="card">
+                                        <h1 class="entry-title">
+                                            Доставка до дома<br>
+                                            Установка по месту
+                                        </h1>
+                                        <small></small>
+
+                                        <span >Доставляем
+                                        <br> По всей
+                                        <br> Западно-Казахстанской области</span>
+
+                                    </div>
+                                </h3>
+                            </div>
+                            <img class="img_3" src="{{ car_list.car_img3 }}"/>
+                        </article>
+
+                        <article>
+                            <div class="info top-right">
+                                <h3>{{ car_list.car_title4 }}</h3>
+                            </div>
+                            <img src="{{ car_list.car_img4 }}"/>
+                        </article>
+                        <article>
+                            <div class="info bottom-left">
+                                <h3>{{ car_list.car_title5 }}</h3></div>
+                            <img src="{{ car_list.car_img5 }}"/>
+                        </article>
+                    </div>
+
+                </div>
+
+
+                <div class="slider-prev-next-control">
+                    <label for=slide1></label>
+                    <label for=slide2></label>
+                    <label for=slide3></label>
+
+                </div>
+
+
+                <div class="slider-dot-control">
+                    <label for=slide1></label>
+                    <label for=slide2></label>
+                    <label for=slide3></label>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

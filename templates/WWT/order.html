@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<!--  Страница с заказом -->
+<div class="container">
+    <div class="ord_after">
+        <div class="orf_tit">
+            {{ post.order_main_title }}
+        </div>
+    </div>
+    <div class="cont_slid">
+        <div class="container4">
+
+            <!-- Слайдер заказов -->
+            <div class="mySlides">
+                <div class="numbertext"></div>
+                <img src="{{post.order_main_img.url}}" style="width:100%">
+            </div>
+            {% if post.order_img_2 %}
+            <div class="mySlides">
+                <div class="numbertext"></div>
+                <img src="{{post.order_img_2.url}}" style="width:100%">
+            </div>
+            {% endif %}
+            {% if post.order_img_3 %}
+            <div class="mySlides">
+                <div class="numbertext"></div>
+                <img src="{{post.order_img_3.url}}" style="width:100%">
+            </div>
+            {% endif %}
+            {% if post.order_img_4 %}
+            <div class="mySlides">
+                <div class="numbertext"></div>
+                <img src="{{post.order_img_4.url}}" style="width:100%">
+            </div>
+            {% endif %}
+            {% if post.order_img_5 %}
+            <div class="mySlides">
+                <div class="numbertext"></div>
+                <img src="{{post.order_img_5.url}}" style="width:100%">
+            </div>
+            {% endif %}
+            {% if post.order_img_6 %}
+            <div class="mySlides">
+                <div class="numbertext"></div>
+                <img src="{{post.order_img_6.url}}" style="width:100%">
+            </div>
+            {% endif %}
+            <!-- Кнопки след/пред -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+            <!-- Нижние картинки -->
+            <div class="row">
+                <div class="column1">
+                    <img class="demo cursor" src="{{post.order_main_img.url}}"
+                         style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+                </div>
+                {% if post.order_img_2 %}
+                <div class="column">
+                    <img class="demo cursor" src="{{post.order_img_2.url}}"
+                         style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+                </div>
+                {% endif %}
+                {% if post.order_img_3 %}
+                <div class="column">
+                    <img class="demo cursor" src="{{post.order_img_3.url}}"
+                         style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+                </div>
+                {% endif %}
+                {% if post.order_img_4%}
+                <div class="column">
+                    <img class="demo cursor" src="{{post.order_img_4.url}}"
+                         style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+                </div>
+                {% else %}
+                {% endif %}
+                {% if post.order_img_5%}
+                <div class="column">
+                    <img class="demo cursor" src="{{post.order_img_5.url}}"
+                         style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
+                </div>
+                {% endif %}
+                {% if post.order_img_6%}
+                <div class="column">
+                    <img class="demo cursor" src="{{post.order_img_6.url}}"
+                         style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
+
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+    </div>
+    <div class="ord_after1">
+        <ul class="har_title">
+            {% if post.order_dop_title1 %}
+            <li class="har">{{post.order_dop_title1}}</li>
+            {% else %}
+            <li class="har2"></li>
+            {% endif %}
+            {% if post.order_dop_title1 and post.order_dop_title2%}
+            <li class="hr_ord"></li>
+            {% else %}
+            <li></li>
+            {% endif %}
+            {% if post.order_dop_title2 %}
+            <li class="har">{{post.order_dop_title2}}</li>
+            {% else %}
+            <li class="har2"></li>
+            {% endif %}
+            <li class="har_price">От {{post.order_price}} тг</li>
+            <li class="har_but">{% include 'WWT/form2.html' %}</li>
+        </ul>
+    </div>
+    <div class="ord_text">
+        <p id="t-ord">Описание</p>
+        <p>{{ post.order_text }}</p>
+    </div>
+</div>
+
+
+{% endblock %}

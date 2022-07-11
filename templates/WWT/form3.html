@@ -1,0 +1,25 @@
+<!--  Форма с указанием заказа не с карточки товара. Вывод на каталог -->
+
+<button class="compose"><i class="fa fa-pencil">
+    <div class="after_order">ОФОРМИТЬ ЗАКАЗ</div>
+</i></button>
+<div class="overlay">
+    <div class="modal">
+        <div class="modal-title">ОФОРМИТЬ ЗАКАЗ<span class="modal-close"></span></div>
+        <div class="modal-body">
+            <form class="modal-form" action="{% url 'thank_after_form'%}" method="POST">
+                {% csrf_token %}
+                {{ form_product.name }}
+                {{ form_product.phone }}
+                {{ form_product.comment }}
+                <input name="email" type="text" value="Заказ не с карточки товара">
+                <div class="modal-button">
+                    <button class="send">Отправить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

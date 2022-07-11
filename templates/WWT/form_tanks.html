@@ -1,0 +1,25 @@
+<!--  Страница "Спасибо за заказ" -->
+{% extends 'base.html' %}
+{% block thanks %}
+{% load static %}
+<div class="container">
+    <div class="thank_position">
+        <h1 class="thank_title">Спасибо!</h1>
+        <div class="thank_text">Ваш заказ успешно оформлен. Мы свяжемся с вами ближайшее время.</div>
+        <div class="time_thank">Вы автоматически вернетесь на главную страницу через <span id="rocket"></span> секунд
+        </div>
+        <div class="button_thank"><a href="{% url 'home_page' %}">ВЕРНУТСЯ НА ГЛАВНУЮ</a></div>
+    </div>
+</div>
+<script type="text/javascript">
+
+
+</script>
+
+
+<script src="{% static 'js/thank.js' %}"></script>
+
+{% endblock %}
+
+
+

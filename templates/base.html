@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Atlanta</title>
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static  'images/glav_icon1.png' %}"/>
+</head>
+<body>
+<!-- Шаблон "Главная страница" -->
+<div class="wrapper_body">
+    <div class="content_body">
+        <div class="header">
+            <div class="container">
+                <div class="header_title">
+                    <div class="logo_flex">
+                        <a href="{% url 'home_page' %}">
+                            <svg viewbox="0 0 100 20">
+                                <defs>
+                                    <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
+                                        <stop offset="5%" stop-color="#68fff0"/>
+                                        <stop offset="95%" stop-color="#68fff0"/>
+                                    </linearGradient>
+                                    <pattern id="wave" x="0" y="0" width="120" height="20"
+                                             patternUnits="userSpaceOnUse">
+                                        <path id="wavePath"
+                                              d="M-40 9 Q-30 7 -20 9 T0 9 T20 9 T40 9 T60 9 T80 9 T100 9 T120 9 V20 H-40z"
+                                              mask="url(#mask)" fill="url(#gradient)">
+                                            <animateTransform
+                                                    attributeName="transform"
+                                                    begin="0s"
+                                                    dur="1.5s"
+                                                    type="translate"
+                                                    from="0,0"
+                                                    to="40,0"
+                                                    repeatCount="indefinite"/>
+                                        </path>
+                                    </pattern>
+                                </defs>
+                                <text text-anchor="middle" x="50" y="15" font-size="17" fill="url(#wave)"
+                                      fill-opacity="1">
+                                    ATLANTA
+                                </text>
+                                <text text-anchor="middle" x="50" y="15" font-size="17" fill="white"
+                                      fill-opacity="0.6">ATLANTA
+                                </text>
+                                <!--                        #e8dcc2-->
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="catalog_flex">
+                        <a href="{% url 'catalog' %}">КАТАЛОГ</a>
+                    </div>
+                    <div class="about_flex">
+                        <a href="{% url 'about_me' %}">О НАС</a>
+                    </div>
+                    <div class="delivery"><a href="{% url 'delivery' %}">ДОСТАВКА</a>
+                    </div>
+                    <div class="contacts_flex">
+                        <a href="tel:+79179552659" class="header__link4">НАШИ КОНТАКТЫ <br> 8 888 8888888 <br> 8 888 8888888 <img
+                                src="{% static  'images/WhatsApp_icon.png' %}" alt=""> </a>
+
+                    </div>
+                    <div class="hamburger-menu">
+                        <input id="menu__toggle" type="checkbox"/>
+                        <label class="menu__btn" for="menu__toggle">
+                            <span></span>
+                        </label>
+
+                        <ul class="menu__box">
+                            <li class="li_burger"><a href="{% url 'catalog' %}">КАТАЛОГ</a></li>
+                            <li class="li_burger"><a href="{% url 'about_me' %}">О НАС</a></li>
+                            <li class="li_burger"><a href="{% url 'delivery' %}">ДОСТАВКА</a></li>
+                            <li class="li_burger"><a href="tel:+79179552659">НАШИ КОНТАКТЫ<br>&nbsp;&nbsp;8 888
+                                8888888<br>&nbsp;&nbsp;8 888 8888888</a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% block content %}
+        {% endblock %}
+        {% block delivery %}
+        {% endblock %}
+        {% block about %}
+        {% endblock %}
+        {% block thanks %}
+        {% endblock %}
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="{% static 'js/script.js' %}"></script>
+        <script src="{% static 'js/slider.js' %}"></script>
+        <script src="{% static 'js/script_content.js' %}"></script>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="wrap_footer">
+                <a class="we_inst" href="https://instagram.com/atlanta_mebel_kz?igshid=YmMyMTA2M2Y=">
+                    <div class="we_whatsapp">
+                        <div class="we_whatsapp_wrap">
+                            <div class="we_whatsapp_title">
+
+                                МЫ В INSTAGRAM
+
+                            </div>
+                            <img class="we_whatsapp_logo" src="{% static  'images/Instagram-Icon.png' %}" alt="">
+
+                        </div>
+                    </div>
+                </a>
+                <div class="logo_footer">
+                    <a href="">
+                        <svg viewbox="0 0 100 20">
+                            <defs>
+                                <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
+                                    <stop offset="5%" stop-color="#68fff0"/>
+                                    <stop offset="95%" stop-color="#68fff0"/>
+                                </linearGradient>
+                                <pattern id="wave" x="0" y="0" width="120" height="20" patternUnits="userSpaceOnUse">
+                                    <path id="wavePath"
+                                          d="M-40 9 Q-30 7 -20 9 T0 9 T20 9 T40 9 T60 9 T80 9 T100 9 T120 9 V20 H-40z"
+                                          mask="url(#mask)" fill="url(#gradient)">
+                                        <animateTransform
+                                                attributeName="transform"
+                                                begin="0s"
+                                                dur="1.5s"
+                                                type="translate"
+                                                from="0,0"
+                                                to="40,0"
+                                                repeatCount="indefinite"/>
+                                    </path>
+                                </pattern>
+                            </defs>
+
+                            <text text-anchor="middle" x="50" y="15" font-size="17" fill="url(#wave)" fill-opacity="1">
+                                ATLANTA
+                            </text>
+                            <text text-anchor="middle" x="50" y="15" font-size="17" fill="white"
+                                  fill-opacity="0.6">ATLANTA
+                            </text>
+                            <!--                        #e8dcc2-->
+                        </svg>
+                    </a>
+                </div>
+                <a class="we_inst" href="https://vk.com/id605181780">
+                    <div class="we_instagramm">
+                        <div class="we_instagramm_wrap">
+
+                            <div class="we_instagramm_title">
+
+                                МЫ В VK
+
+                            </div>
+                            <img class="we_instagramm_logo" src="{% static  'images/vk.png' %}" alt="">
+                </a>
+            </div>
+
+        </div>
+</div>
+</div>
+</footer>
+
+</div>
+
+</body>
+</html>
