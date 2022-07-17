@@ -14,36 +14,48 @@
             <!-- Слайдер заказов -->
             <div class="mySlides">
                 <div class="numbertext"></div>
-                <img src="{{post.order_main_img.url}}" style="width:100%">
+                <a data-fancybox="gallery" href="{{post.order_main_img.url}}">
+                    <img src="{{post.order_main_img.url}}" style="width:100%">
+                </a>
             </div>
             {% if post.order_img_2 %}
             <div class="mySlides">
-                <div class="numbertext"></div>
-                <img src="{{post.order_img_2.url}}" style="width:100%">
+                <a data-fancybox="gallery" href="{{post.order_img_2.url}}">
+                    <div class="numbertext"></div>
+                    <img src="{{post.order_img_2.url}}" style="width:100%">
+                </a>
             </div>
             {% endif %}
             {% if post.order_img_3 %}
             <div class="mySlides">
                 <div class="numbertext"></div>
-                <img src="{{post.order_img_3.url}}" style="width:100%">
+                <a data-fancybox="gallery" href="{{post.order_img_3.url}}">
+                    <img src="{{post.order_img_3.url}}" style="width:100%">
+                </a>
             </div>
             {% endif %}
             {% if post.order_img_4 %}
             <div class="mySlides">
                 <div class="numbertext"></div>
-                <img src="{{post.order_img_4.url}}" style="width:100%">
+                <a data-fancybox="gallery" href="{{post.order_img_4.url}}">
+                    <img src="{{post.order_img_4.url}}" style="width:100%">
+                </a>
             </div>
             {% endif %}
             {% if post.order_img_5 %}
             <div class="mySlides">
                 <div class="numbertext"></div>
-                <img src="{{post.order_img_5.url}}" style="width:100%">
+                <a data-fancybox="gallery" href="{{post.order_img_5.url}}">
+                    <img src="{{post.order_img_5.url}}" style="width:100%">
+                </a>
             </div>
             {% endif %}
             {% if post.order_img_6 %}
             <div class="mySlides">
                 <div class="numbertext"></div>
-                <img src="{{post.order_img_6.url}}" style="width:100%">
+                <a data-fancybox="gallery" href="{{post.order_img_6.url}}">
+                    <img src="{{post.order_img_6.url}}" style="width:100%">
+                </a>
             </div>
             {% endif %}
             <!-- Кнопки след/пред -->
@@ -52,42 +64,55 @@
 
             <!-- Нижние картинки -->
             <div class="row">
-                <div class="column1">
-                    <img class="demo cursor" src="{{post.order_main_img.url}}"
-                         style="width:100%" onclick="currentSlide(1)" alt="The Woods">
-                </div>
-                {% if post.order_img_2 %}
-                <div class="column">
-                    <img class="demo cursor" src="{{post.order_img_2.url}}"
-                         style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
-                </div>
-                {% endif %}
-                {% if post.order_img_3 %}
-                <div class="column">
-                    <img class="demo cursor" src="{{post.order_img_3.url}}"
-                         style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
-                </div>
-                {% endif %}
-                {% if post.order_img_4%}
-                <div class="column">
-                    <img class="demo cursor" src="{{post.order_img_4.url}}"
-                         style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
-                </div>
-                {% else %}
-                {% endif %}
-                {% if post.order_img_5%}
-                <div class="column">
-                    <img class="demo cursor" src="{{post.order_img_5.url}}"
-                         style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
-                </div>
-                {% endif %}
-                {% if post.order_img_6%}
-                <div class="column">
-                    <img class="demo cursor" src="{{post.order_img_6.url}}"
-                         style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
+                <div class="flex flex-wrap gap-5 justify-center max-w-5xl mx-auto px-6">
+                    <div class="column1">
 
+                        <img class="demo cursor" src="{{post.order_main_img.url}}"
+                             style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+
+                    </div>
+                    {% if post.order_img_2 %}
+                    <div class="column">
+
+                        <img class="demo cursor" src="{{post.order_img_2.url}}"
+                             style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+
+                    </div>
+                    {% endif %}
+                    {% if post.order_img_3 %}
+                    <div class="column">
+
+                        <img class="demo cursor" src="{{post.order_img_3.url}}"
+                             style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+
+                    </div>
+                    {% endif %}
+                    {% if post.order_img_4%}
+                    <div class="column">
+
+                        <img class="demo cursor" src="{{post.order_img_4.url}}"
+                             style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+
+                    </div>
+                    {% else %}
+                    {% endif %}
+                    {% if post.order_img_5%}
+                    <div class="column">
+
+                        <img class="demo cursor" src="{{post.order_img_5.url}}"
+                             style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
+
+                    </div>
+                    {% endif %}
+                    {% if post.order_img_6%}
+                    <div class="column">
+                        <img src="{{post.order_img_6.url}}"
+                             class="demo cursor"
+                             style="width:100%;" onclick="currentSlide(6)"
+                            alt="">
+                    </div>
+                    {% endif %}
                 </div>
-                {% endif %}
             </div>
         </div>
 
@@ -121,3 +146,8 @@
 
 
 {% endblock %}
+
+
+
+
+
