@@ -2,6 +2,28 @@ a[data-fancybox] img {
   cursor: zoom-in;
 }
 
+@media only screen and (max-width: 600px) {
+  .fancybox__toolbar__items.fancybox__toolbar__items--left{
+    width: 100px;
+    margin-right:10px ;
+    transition: 0.5;
+  }
+}
+@media only screen and (max-width: 335px) {
+  .fancybox__toolbar__items.fancybox__toolbar__items--right{
+    width: 120px;
+    margin-right:10px ;
+    transition: 0.5;
+  }
+}
+@media only screen and (max-width: 215px) {
+  .fancybox__toolbar__items.fancybox__toolbar__items--left{
+    width: 50px;
+    margin-left: -30px;
+    transition: 0.5;
+  }
+}
+
 .fancybox__container {
   --fancybox-color: #334155;
   --fancybox-bg: #fff;
@@ -60,29 +82,32 @@ a[data-fancybox] img {
   display: flex;
   border-bottom: 1px solid #E5E7EB;
 }
-.fancybox__toolbar__items--left{
 
-}
-.fancybox__counter{
+.fancybox__toolbar__items--left {}
+
+.fancybox__counter {
   height: 50px;
   width: 300px;
   display: flex;
   margin-left: 40px;
 }
-.fancybox__toolbar svg{
+
+.fancybox__toolbar svg {
   margin-top: 0px;
   margin-left: -4px;
   font-weight: bold;
   max-width: 300px;
   height: auto;
 }
-.fancybox__nav svg{
+
+.fancybox__nav svg {
   margin-top: 0px;
   margin-left: -4px;
   font-weight: bold;
   max-width: 300px;
   height: auto;
 }
+
 /**
 * Thumbnails
 */

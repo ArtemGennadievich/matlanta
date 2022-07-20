@@ -57,6 +57,7 @@ class AdminSlugGlobal(admin.ModelAdmin):
             return 'Нету изображения'
 
     get_img.short_description = 'Главная картинка'
+    get_mini_img.short_description = 'Картинка брэнда'
 
 
 class OrderNewAdmin(admin.ModelAdmin):
