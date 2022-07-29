@@ -7,6 +7,10 @@
     <title>Atlanta</title>
     <link rel="stylesheet" href="{% static 'css/style2.css' %}">
     <link rel="shortcut icon" type="image/x-icon" href="{% static  'images/glav_icon1.png' %}"/>
+    <link rel="stylesheet" href="{% static 'css/jquery.fancybox.min.css' %}">
+    <script src="{% static  'js/jquery.fancybox.min.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"/>
 </head>
 <body>
 <!-- Шаблон "Главная страница" -->
@@ -17,7 +21,7 @@
                 <div class="header_title">
                     <div class="logo_flex">
                         <a href="{% url 'home_page' %}">
-                            <svg viewbox="0 0 100 20">
+                            <svg class="svga" viewbox="0 0 100 20">
                                 <defs>
                                     <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
                                         <stop offset="5%" stop-color="#68fff0"/>
@@ -59,8 +63,9 @@
                     <div class="delivery"><a href="{% url 'delivery' %}">ДОСТАВКА</a>
                     </div>
                     <div class="contacts_flex">
-                        <a href="tel:+79179552659" class="header__link4">НАШИ КОНТАКТЫ <br> 8 888 8888888 <br> 8 888 8888888 <img
-                                src="{% static  'images/WhatsApp_icon.png' %}" alt=""> </a>
+                        <a href="tel:+79179552659" class="header__link4">НАШИ КОНТАКТЫ <br> 8 888 8888888 <br> 8 888
+                            8888888 <img
+                                    src="{% static  'images/WhatsApp_icon.png' %}" alt=""> </a>
 
                     </div>
                     <div class="hamburger-menu">
@@ -114,7 +119,7 @@
                 </a>
                 <div class="logo_footer">
                     <a href="">
-                        <svg viewbox="0 0 100 20">
+                        <svg class="svga" viewbox="0 0 100 20">
                             <defs>
                                 <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
                                     <stop offset="5%" stop-color="#68fff0"/>

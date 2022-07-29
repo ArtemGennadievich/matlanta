@@ -36,7 +36,7 @@ class OrderNew(models.Model):
         return self.order_main_title
 
     def get_absolute_url(self):
-        return reverse('post', kwargs={'post_slug': self.slug})
+        return reverse('category', kwargs={'post_slug': self.slug, 'cat_slug': self.cat.slug})
 
     class Meta:
         verbose_name = "карточку товара"

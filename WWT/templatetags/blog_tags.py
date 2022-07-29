@@ -1,7 +1,6 @@
 from django import template
 from order.models import *
 
-
 register = template.Library()
 
 
@@ -11,5 +10,8 @@ def ShowCategory(sort=None, cat_selected=0):
         cats = NewCategoryOrder.objects.all()
     else:
         cats = NewCategoryOrder.objects.order_by(sort)
-
+    print(cats)
     return {'cats': cats, 'cat_selected': cat_selected}
+
+
+

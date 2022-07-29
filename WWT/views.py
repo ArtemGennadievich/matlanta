@@ -111,6 +111,7 @@ form_product = OrderForm()
 
 
 class Catalog(ListView):
+    paginate_by = 8
     model = OrderNew
     template_name = 'WWT/catalog.html'
     context_object_name = 'ord_new'
@@ -127,18 +128,6 @@ class Catalog(ListView):
         return OrderNew.objects.filter(order_is_published=True).select_related('cat')
 
 
-class ShowPost(DetailView):
-    model = OrderNew
-    template_name = 'WWT/order.html'
-    context_object_name = 'post'
-    slug_url_kwarg = 'post_slug'
-
-    def get_context_data(self, *, object_list=None, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['form_product'] = form_product
-        return context
-
-
 class ShowForm(ListView):
     model = OrderNew
     template_name = 'WWW/form2'
@@ -151,6 +140,7 @@ class ShowForm(ListView):
 
 
 class CatalogCategory(ListView):
+    paginate_by = 8
     model = OrderNew
     template_name = 'WWT/catalog.html'
     context_object_name = 'ord_new'
@@ -175,3 +165,21 @@ def About_me(request):
 
 def delivery(request):
     return render(request, 'WWT/delivery.html')
+
+
+class ShowPost(ListView):
+    model = OrderNew
+    template_name = 'WWT/order.html'
+    context_object_name = 'posts'
+    slug_url_kwarg = 'post_slug'
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['form_product'] = form_product
+
+        return context
+
+    def get_queryset(self):
+        return OrderNew.objects.filter(cat__slug=self.kwargs['cat_slug'],
+                                       order_is_published=True).select_related(
+            'cat')

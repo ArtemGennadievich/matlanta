@@ -1,12 +1,28 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load static %}
+{% load blog_tags %}
 <!--  Страница с заказом -->
+
 <div class="container">
     <div class="container_flex">
+        <div class="url">
+            <a class="url_after" href="{% url 'home_page' %}">Главная</a>
+            <div class="url_after">|</div>
+            {% for post in posts %}
+            {% if post.get_absolute_url == request.path %}
+            <a class="url_after" href="/catalog/"> Каталог</a>
+            <div class="url_after">|</div>
+            <div class="url_after"> {{ post.order_main_title|title }}</div>
+            {% endif %}
+            {% endfor %}
+        </div>
+        {% for post in posts %}
+        {% if post.get_absolute_url == request.path %}
         <div class="ord_after_up">
             <div class="orf_tit">
                 {{ post.order_main_title }}
+
             </div>
         </div>
         <div class="container_flex_1">
@@ -184,9 +200,43 @@
             <p id="t-ord">Описание</p>
             <p>{{ post.order_text }}</p>
         </div>
+        {% else %}
+        {% endif %}
+        {% endfor %}
+        {% if posts|length == 1 %}
+
+        {% else %}
+        <div class="more_product">Похожие товары</div>
+        <div class="form_hr"></div>
+        {% endif %}
+        {% if posts|length == 1 %}
+        <div class="products__items_after">
+        {% else %}
+        <div class="products__items">
+            {% endif %}
+            {% for post2 in posts %}
+            {% if post2.get_absolute_url != request.path %}
+
+            {% if post2.get_absolute_url == request.path %}
+            {% else %}
+            <div class="products__item">
+                <a href="{{ post2.get_absolute_url }}" class="product_item_a">
+                    <div class="products__image">
+                        <img src="{{ post2.order_main_img.url }}" alt="">
+                    </div>
+                    <div class="products__name">{{ post2.order_main_title }}</div>
+                    <hr class="hr_price">
+                    <div class="price_order">от {{ post2.order_price }} ₽</div>
+                    <div class="products__button">ОФОРМИТЬ ЗАКАЗ</div>
+                </a>
+            </div>
+            {% endif %}
+            {% else %}
+            {% endif %}
+            {% endfor %}
+        </div>
     </div>
 </div>
-
 
 {% endblock %}
 
